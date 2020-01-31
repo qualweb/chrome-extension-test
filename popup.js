@@ -9,7 +9,11 @@
           .then(browser => {
             browser.pages()
               .then(pages => {
-                document.getElementById('n_pages').innerHTML = 'Nº of pages: ' + pages.length;
+               let act= new ACTRules.ACTRules();
+               act.execute({},pages[0],[]).then(result =>{
+                  document.getElementById('n_pages').innerHTML = 'Nº of pages: teste ' + JSON.stringify(result);
+                })
+                
               });
           })      
       });
